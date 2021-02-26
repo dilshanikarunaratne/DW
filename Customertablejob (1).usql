@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS orders;	
+
+USE DATABASE orders ;
+CREATE SCHEMA IF NOT EXISTS SCHALR;
+
+USE DATABASE orders ;
+
+CREATE TABLE SCHALR.customer (
+CustId int,
+CustNames string,
+Age int,
+CustAddress string,
+INDEX indx_id CLUSTERED (CustId))
+DISTRIBUTED BY HASH (CustNames);
+
